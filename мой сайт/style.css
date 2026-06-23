@@ -1,79 +1,137 @@
-body {
-    font-family: Arial, sans-serif;
+/* ===== СБРОС СТИЛЕЙ ===== */
+* {
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
+    box-sizing: border-box;
 }
 
+/* ===== ПЕРЕМЕННЫЕ (ЦВЕТА) ===== */
+:root {
+    --color-primary: #2e5395;
+    --color-accent: #f2a154;
+    --color-bg-light: #eaf1fb;
+}
+
+/* ===== ОБЩИЕ СТИЛИ ===== */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #fafafa;
+}
+
+/* ===== ШАПКА (FLEX) ===== */
 header {
-    background: #222;
-    color: white;
-    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+/* ===== НАВИГАЦИЯ (FLEX) ===== */
+nav {
+    display: flex;
+    gap: 1.5rem;
 }
 
 nav a {
     color: white;
-    margin-left: 20px;
     text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
 }
 
-nav a:hover {
+/* ===== ПОДСВЕТКА АКТИВНОГО ПУНКТА ===== */
+nav a.active {
     text-decoration: underline;
+    color: var(--color-accent);
 }
 
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 
+/* ===== СЕКЦИИ ===== */
 section {
     background: white;
-    padding: 20px;
-    margin-bottom: 30px;
+    padding: 2rem;
+    margin-bottom: 2rem;
     border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-article {
-    border-left: 4px solid #4CAF50;
-    padding-left: 15px;
-    margin-bottom: 20px;
+section h2 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
 }
 
+/* ===== СЕТКА КАРТОЧЕК (FLEX) ===== */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.projects-grid article {
+    flex: 1 1 280px;
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.projects-grid article h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+/* ===== ФОРМА ===== */
 form label {
     display: block;
-    margin-top: 15px;
+    margin-top: 1rem;
+    font-weight: 500;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
     border: 1px solid #ccc;
     border-radius: 6px;
     box-sizing: border-box;
 }
 
 form button {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #4CAF50;
+    margin-top: 1.5rem;
+    padding: 0.75rem 2rem;
+    background: var(--color-primary);
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 form button:hover {
-    background: #45a049;
+    background: #1a3b6e;
 }
 
+/* ===== ПОДВАЛ ===== */
 footer {
-    background: #222;
-    color: white;
     text-align: center;
-    padding: 20px;
+    padding: 2rem;
+    background: var(--color-primary);
+    color: white;
+    margin-top: 2rem;
 }
