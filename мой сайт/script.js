@@ -10,11 +10,17 @@ const navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach(function(link) {
     link.addEventListener("click", function() {
-        // Убираем класс active у всех ссылок
         navLinks.forEach(function(l) {
             l.classList.remove("active");
         });
-        // Добавляем класс active у нажатой ссылки
         link.classList.add("active");
     });
+});
+
+// ===== БУРГЕР-МЕНЮ (открытие/закрытие) =====
+const burgerBtn = document.getElementById("burger-btn");
+const nav = document.querySelector("nav");
+
+burgerBtn.addEventListener("click", function() {
+    nav.classList.toggle("open");
 });

@@ -28,10 +28,21 @@ header {
     padding: 1rem 2rem;
     background-color: var(--color-primary);
     color: white;
+    position: relative;
 }
 
 header h1 {
     font-size: 1.5rem;
+}
+
+/* ===== КНОПКА-БУРГЕР (по умолчанию скрыта) ===== */
+.burger {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
 /* ===== НАВИГАЦИЯ (FLEX) ===== */
@@ -74,15 +85,14 @@ section h2 {
     color: var(--color-primary);
 }
 
-/* ===== СЕТКА КАРТОЧЕК (FLEX) ===== */
+/* ===== СЕТКА КАРТОЧЕК (GRID) ===== */
 .projects-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
 }
 
 .projects-grid article {
-    flex: 1 1 280px;
     background: white;
     border-radius: 8px;
     padding: 1.5rem;
@@ -134,4 +144,69 @@ footer {
     background: var(--color-primary);
     color: white;
     margin-top: 2rem;
+}
+
+/* ============================================ */
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ (медиа-запросы) ===== */
+/* ============================================ */
+
+/* Планшеты и телефоны (ширина меньше 768px) */
+@media (max-width: 768px) {
+
+    /* Показываем бургер */
+    .burger {
+        display: block;
+    }
+
+    /* Навигация скрыта по умолчанию */
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: var(--color-primary);
+        width: 100%;
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+
+    /* Когда меню открыто — показываем */
+    nav.open {
+        display: flex;
+    }
+
+    /* Убираем отступы у header */
+    header {
+        padding: 0.8rem 1rem;
+    }
+
+    /* Карточки в одну колонку */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Уменьшаем отступы у секций */
+    section {
+        padding: 1rem;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+}
+
+/* Очень маленькие экраны (ширина меньше 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .burger {
+        font-size: 1.5rem;
+    }
+
+    form button {
+        width: 100%;
+    }
 }
