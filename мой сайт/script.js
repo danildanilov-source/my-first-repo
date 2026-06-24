@@ -1,11 +1,9 @@
 console.log("Скрипт работает.");
 
-// ===== ДАТА В ПОДВАЛЕ =====
 const dateSpan = document.getElementById("update-date");
 const today = new Date();
 dateSpan.textContent = today.toLocaleDateString("ru-RU");
 
-// ===== ПОДСВЕТКА АКТИВНОГО ПУНКТА МЕНЮ =====
 const navLinks = document.querySelectorAll("nav a");
 
 navLinks.forEach(function(link) {
@@ -17,10 +15,22 @@ navLinks.forEach(function(link) {
     });
 });
 
-// ===== БУРГЕР-МЕНЮ (открытие/закрытие) =====
 const burgerBtn = document.getElementById("burger-btn");
 const nav = document.querySelector("nav");
 
 burgerBtn.addEventListener("click", function() {
     nav.classList.toggle("open");
+});
+
+const toggleBtn = document.getElementById("toggle-btn");
+const extraInfo = document.getElementById("extra-info");
+
+toggleBtn.addEventListener("click", function() {
+    extraInfo.classList.toggle("expanded");
+
+    if (extraInfo.classList.contains("expanded")) {
+        toggleBtn.textContent = "Скрыть";
+    } else {
+        toggleBtn.textContent = "Показать больше";
+    }
 });
