@@ -34,20 +34,17 @@
 
         <section id="projects">
             <h2>Проекты</h2>
-            <div class="projects-grid">
-                <article>
-                    <h3>🎧 Ночь в студии</h3>
-                    <p>Живые выступления в формате "one take".</p>
-                </article>
-                <article>
-                    <h3>🎤 Open Mic</h3>
-                    <p>Ежемесячное мероприятие для музыкантов.</p>
-                </article>
-                <article>
-                    <h3>📻 Радио Wave</h3>
-                    <p>Онлайн-радио без рекламы 24/7.</p>
-                </article>
+
+            <div class="filters">
+                <button data-filter="all" class="active">Все</button>
+                <button data-filter="live">🎤 Концерты</button>
+                <button data-filter="studio">🎧 Студия</button>
+                <button data-filter="radio">📻 Радио</button>
             </div>
+
+            <input type="text" id="search-input" placeholder="Поиск проекта...">
+
+            <div class="projects-grid" id="projects-grid"></div>
         </section>
 
         <section id="contact">
