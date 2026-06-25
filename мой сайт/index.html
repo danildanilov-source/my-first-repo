@@ -10,6 +10,7 @@
 
     <header>
         <h1>🎵 Music Wave</h1>
+        <button id="theme-toggle" aria-label="Переключить тему">🌙</button>
         <button class="burger" id="burger-btn" aria-label="Открыть меню">☰</button>
         <nav>
             <a href="#about">О нас</a>
@@ -51,15 +52,14 @@
 
         <section id="contact">
             <h2>Связаться</h2>
-            <form>
+            <form id="contact-form">
                 <label for="name">Имя</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name">
+                <span class="error" id="name-error"></span>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Сообщение</label>
-                <textarea id="message" name="message"></textarea>
+                <input type="text" id="email" name="email">
+                <span class="error" id="email-error"></span>
 
                 <button type="submit">Отправить</button>
             </form>

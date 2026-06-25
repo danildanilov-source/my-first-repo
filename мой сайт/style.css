@@ -15,6 +15,7 @@ body {
     line-height: 1.6;
     color: #222;
     background-color: #fafafa;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -29,6 +30,14 @@ header {
 
 header h1 {
     font-size: 1.5rem;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .burger {
@@ -74,6 +83,7 @@ section {
     margin-bottom: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease;
 }
 
 section h2 {
@@ -94,7 +104,7 @@ section h2 {
     border: 1px solid #eee;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     animation: fadeInUp 0.6s ease forwards;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .projects-grid article:nth-child(2) {
@@ -162,6 +172,14 @@ form button:active {
     transform: scale(0.97);
 }
 
+.error {
+    display: block;
+    color: #d33;
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin-top: 0.2rem;
+}
+
 .extra-info {
     max-height: 0;
     overflow: hidden;
@@ -193,8 +211,54 @@ footer {
     background: var(--color-primary);
     color: white;
     margin-top: 2rem;
+    transition: background-color 0.3s ease;
 }
 
+/* ===== ТЁМНАЯ ТЕМА ===== */
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #eaeaea;
+}
+
+body.dark-theme header {
+    background-color: #111;
+}
+
+body.dark-theme section {
+    background-color: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .projects-grid article {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.dark-theme .projects-grid article h3 {
+    color: #f2a154;
+}
+
+body.dark-theme form input,
+body.dark-theme form textarea {
+    background-color: #444;
+    color: #eaeaea;
+    border-color: #555;
+}
+
+body.dark-theme form input:focus,
+body.dark-theme form textarea:focus {
+    outline-color: var(--color-accent);
+}
+
+body.dark-theme footer {
+    background-color: #111;
+}
+
+body.dark-theme .error {
+    color: #ff6b6b;
+}
+
+/* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
 @media (max-width: 768px) {
     .burger {
         display: block;
